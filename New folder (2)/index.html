@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runden Zähler</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+      // Define global variables to store click count and last click timestamp
+      var clickCount = 0;
+      var lastClickTime = null;
+      
+      // Function to handle button click event
+      function handleClick() {
+        clickCount++; // Increment click count
+        lastClickTime = new Date(); // Update last click timestamp
+        document.getElementById("clickCountDisplay").innerHTML = clickCount; // Display click count
+        document.getElementById("lastClickTimeDisplay").innerHTML = lastClickTime.toLocaleString(); // Display last click timestamp
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Button Click Counter</h1>
+    <p>
+      <button onclick="handleClick()">Runde Gemacht</button>
+    </p>
+    <p>Gemachte Runden anzahl: <span id="clickCountDisplay">0</span></p>
+    <p>Letzte Runde: <span id="lastClickTimeDisplay">N/A</span></p>
+  </body>
+</html>
